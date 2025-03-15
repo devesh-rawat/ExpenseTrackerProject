@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -84,7 +85,8 @@ fun AddExpense(navController: NavHostController = rememberNavController()) {
                 Image(
                     painter = painterResource(R.drawable.ic_back),
                     contentDescription = null,
-                    modifier=Modifier.align(Alignment.TopStart)
+                    modifier=Modifier.align(Alignment.TopStart).clip(CircleShape)
+                        .clickable { navController.navigateUp() }
                 )
                 ExpenseTextView("Add Expense",
                     fontWeight = FontWeight.ExtraBold,
